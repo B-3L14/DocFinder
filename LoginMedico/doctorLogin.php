@@ -26,9 +26,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             session_start();
             $_SESSION['id'] = $usuario['id'];
             $_SESSION['nome'] = $usuario['nome'];
+            $_SESSION['email'] = $usuario['email'];
+            $_SESSION['cpf'] = $usuario['cpf'];
+            $_SESSION['telefone'] = $usuario['telefone'];
+            $_SESSION['cidade'] = $usuario['cidade'];
+            $_SESSION['bairro'] = $usuario['bairro'];
+            $_SESSION['data_nascimento'] = $usuario['data_nascimento'];
+            $_SESSION['genero'] = $usuario['genero'];
+            $_SESSION['especialidade'] = $usuario['especialidade'];
 
             // Redireciona para a página inicial do paciente
-            header("Location: ../homeMedico/homeDoctor.html");
+            header("Location: ../homeMedico/homeDoctor.php");
             exit();
         } else {
             echo "Erro: E-mail ou senha incorretos.";

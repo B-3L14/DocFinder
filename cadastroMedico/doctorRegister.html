@@ -3,102 +3,230 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Cadastro Médico</title>
+    <style>
+        @charset "UTF-8";
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #87CEEB;
+            color: #FFF;
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: #005f73;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            height: 100vh;
+            width: 100%;
+            padding-top: 30px;
+        }
+
+        .main-login {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            width: 80%;
+            max-width: 900px;
+            background-color: #4CA9FF;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .left-login {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .left-login img {
+            width: 100%;
+            max-width: 200px;
+        }
+
+        .right-login {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card-login {
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        .textfield {
+            margin-bottom: 20px;
+        }
+
+        .textfield label {
+            display: block;
+            text-align: left;
+            margin-bottom: 5px;
+            color: #FFF;
+            font-size: 14px;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="date"],
+        input[type="phone"] {
+            border-radius: 15px;
+            border: none;
+            width: 100%;
+            height: 50px;
+            padding-left: 15px;
+            background-color: #FFF;
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+        input[type="radio"] {
+            display: block; /* Cada botão de rádio será exibido abaixo */
+            margin: 5px 0 15px 0; /* Margem para espaçamento entre os itens */
+            height: 20px; /* Ajustando tamanho */
+            width: 20px; /* Ajustando tamanho */
+        }
+
+        input::placeholder {
+            color: #B6B6B6;
+        }
+
+        button.btn-login {
+            cursor: pointer;
+            width: 100%;
+            height: 50px;
+            border-radius: 20px;
+            border: none;
+            background-color: #005f73;
+            color: #FFF;
+            font-weight: bold;
+            margin-top: 15px;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        button.btn-login:hover {
+            background-color: #003f51;
+            transform: scale(1.05);
+        }
+
+        input:focus {
+            outline: none;
+            border: 2px solid #005f73;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 15px;
+            font-size: 14px;
+            color: #005f73;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+
+    </style>
 </head>
 <body>
     <div class="container">
-        <div class="content">
-            <form action="doctorRegister.php" method="POST">
-                <div class="main-login">
-            
-                    <div class="left-login">
-                        <!-- <img src="./assets/DocFinder - Logo.png" alt=""> -->
-                    </div>
-            
-                    <div class="right-login">
-                        <div class="card-login">
-                            
-                            <div class="textfield">
-                                <label for="usuario">Nome</label>
-                                <input type="text" name="nome" placeholder="Nome completo">
-                            </div>
+        <form action="doctorRegister.php" method="POST">
+            <div class="main-login">
+                <div class="right-login">
+                    <div class="card-login">
+                        <div class="textfield">
+                            <label for="usuario">Nome</label>
+                            <input type="text" name="nome" placeholder="Nome completo">
+                        </div>
 
-                            <div class="textfield">
-                                <label for="sx">Sexo</label>
-                                <br>
-                            
-                                    <input type="radio" name="genero" id="masc" value="Masculino">
-                                    <label for="masc">Masculino</label>                                         
-                                    <input type="radio" name="genero" id="fem" value="Feminino">
-                                    <label for="fem">Feminino</label>
-                            </div>
-            
-                            <div class="textfield">
-                                <label for="usuario">Email</label>
-                                <input type="text" name="email" placeholder="Email">
-                            </div>
-
-                            <div class="textfield">
-                                <label for="spe">Especialidade</label>
-                                <br>
-                            
-                                    <input type="radio" name="especialidade" id="psic" value="Psicologo">
-                                    <label for="psic">Psicologo</label>                                         
-                                    <input type="radio" name="especialidade" id="psiq" value="Psiquiatra">
-                                    <label for="psiq">Psiquiatra</label>
-                            </div>
-
-                            <div class="textfield">
-                                <label for="usuario">CPF</label>
-                                <input type="text" name="cpf" placeholder="CPF">
-                            </div>
-
-                            <div class="textfield">
-                                <label for="usuario">Data de nascimento</label>
-                                <input type="date" name="data_nascimento" placeholder="Data de nascimento">
-                            </div>
-
-                            <div class="textfield">
-                                <label for="phome">Telefone</label>
-                                <input type="phone" name="telefone" placeholder="Telefone">
-                            </div>
-                            
-                            <div class="textfield">
-                                <label for="endereco">Endereço do local de atendimento</label>
-                                <br>
-                                <input type="text" name="cep" placeholder="CEP">
-                                <br>
-                                <input type="text" name="cidade" placeholder="Cidade">
-                                <br>
-                                <input type="text" name="rua" placeholder="Rua">
-                                <br>
-                                <input type="text" name="numero" placeholder="Número">
-                                <br>
-                                <input type="text" name="bairro" placeholder="Bairro">
-                                <br>
-                            </div>
-
-                            <div class="textfield">
-                                <label for="usuario">Senha</label>
-                                <input type="password" name="senha" placeholder="Senha">
-                                <!-- <a href="recuperar_senha.html" class="recuperar-senha">Recuperar senha</a> -->
-                            </div>
-
-                            <div class="textfield">
-                                <label for="usuario">Confirme senha</label>
-                                <input type="password" name="confirmar_senha" placeholder="Senha">
-                            </div>
-            
-                            <button type="submit" class="btn-login">Cadastrar</button>
-
+                        <div class="textfield">
+                            <label for="sx">Sexo</label>
                             <br>
-                            <a href="../loginMedico/doctorLogin.html">Já tem um cadastro?</a>
+                            <label for="masc">Masculino</label>
+                            <input type="radio" name="genero" id="masc" value="Masculino">
+                            <label for="fem">Feminino</label>                                         
+                            <input type="radio" name="genero" id="fem" value="Feminino">
                             
                         </div>
+
+                        <div class="textfield">
+                            <label for="usuario">Email</label>
+                            <input type="text" name="email" placeholder="Email">
+                        </div>
+
+                        <div class="textfield">
+                            <label for="spe">Especialidade</label>
+                            <br>
+                            <label for="psic">Psicólogo</label> 
+                            <input type="radio" name="especialidade" id="psic" value="Psicólogo">
+                            <label for="psiq">Psiquiatra</label>
+                            <input type="radio" name="especialidade" id="psiq" value="Psiquiatra">                        </div>
+
+                        <div class="textfield">
+                            <label for="usuario">CPF</label>
+                            <input type="text" name="cpf" placeholder="CPF">
+                        </div>
+
+                        <div class="textfield">
+                            <label for="usuario">Data de nascimento</label>
+                            <input type="date" name="data_nascimento" placeholder="Data de nascimento">
+                        </div>
+
+                        <div class="textfield">
+                            <label for="phome">Telefone</label>
+                            <input type="phone" name="telefone" placeholder="Telefone">
+                        </div>
+
+                        <div class="textfield">
+                            <label for="endereco">Endereço do local de atendimento</label>
+                            <br>
+                            <input type="text" name="cep" placeholder="CEP">
+                            <br>
+                            <input type="text" name="cidade" placeholder="Cidade">
+                            <br>
+                            <input type="text" name="rua" placeholder="Rua">
+                            <br>
+                            <input type="text" name="numero" placeholder="Número">
+                            <br>
+                            <input type="text" name="bairro" placeholder="Bairro">
+                            <br>
+                        </div>
+
+                        <div class="textfield">
+                            <label for="usuario">Senha</label>
+                            <input type="password" name="senha" placeholder="Senha">
+                        </div>
+
+                        <div class="textfield">
+                            <label for="usuario">Confirme senha</label>
+                            <input type="password" name="confirmar_senha" placeholder="Senha">
+                        </div>
+
+                        <button type="submit" class="btn-login">Cadastrar</button>
+
+                        <br>
+                        <a href="../loginMedico/doctorLogin.html">Já tem um cadastro?</a>
+                        <br>
+                            <a href="../cadastroPaciente/pacientRegister.html">Clique AQUI para realizar registro como PACIENTE</a>
                     </div>
                 </div>
-        </div>
+            </div>
+        </form>
     </div>
-    
 </body> 
 </html>

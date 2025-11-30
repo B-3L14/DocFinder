@@ -1,11 +1,161 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Doc Finder</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            margin: 0; 
+            padding: 0; 
+            background-color: #f0f8ff; 
+            color: #333; 
+        }
+        header { 
+            display: flex; 
+            align-items: center; 
+            justify-content: space-between; 
+            padding: 15px 30px; 
+            background-color: #007acc; 
+            color: white; 
+        }
+        .logo img { 
+            height: 70px; /* Altura ajustável da logo */
+        }
+        nav { 
+            display: flex; 
+            align-items: center; 
+        }
+        nav a { 
+            text-decoration: none; 
+            color: white; 
+            margin: 0 10px; 
+            font-weight: bold; 
+        }
+        nav a:hover { 
+            text-decoration: underline; 
+        }
+        .hero { 
+            text-align: center; 
+            padding: 50px 20px; 
+            background-color: #e6f2ff; 
+            color: #003d66;  
+        }
+        .hero input { 
+            padding: 10px; 
+            width: 70%; 
+            max-width: 500px; 
+            border: 1px solid #007acc; 
+            border-radius: 5px; 
+        }
+        .hero button { 
+            padding: 10px 15px; 
+            margin-left: 5px; 
+            background-color: #007acc; 
+            color: white; 
+            border: none; 
+            border-radius: 5px; 
+            cursor: pointer; 
+        }
+        .hero button:hover { 
+            background-color: #005f99;  
+        }
+        .hero div a { 
+            display: inline-block; 
+            background-color: #66b2ff; 
+            border-radius: 5px; 
+            padding: 8px 12px; 
+            color: white; 
+            text-decoration: none; 
+            margin: 5px; 
+        }
+        .hero div a:hover { 
+            background-color: #005f99; 
+        }
+        footer {
+            background-color: #007acc; /* Cor de fundo do footer */
+            padding: 20px;
+            color: white;
+            font-size: 14px;
+            margin-top: 20px;
+        }
+
+        .footer-container {
+            display: flex; /* Usando flexbox para alinhar logo e texto */
+            justify-content: space-between; /* Espaço entre logo e texto */
+            align-items: center; /* Alinhamento vertical */
+        }
+
+        .footer-logo img {
+            height: 70px; /* Altura ajustável da logo */
+        }
+
+        footer p {
+            margin: 0; /* Remove a margem do parágrafo */
+            padding-left: 20px; /* Espaçamento à esquerda do texto */
+        }
+
+    </style>
 </head>
 <body>
-    
+
+<header>
+    <div class="logo">
+        <a href="index.html">
+            <img src="../assets/logo.png" alt="Doc Finder Logo">
+        </a>
+    </div>
+    <nav>
+        <a href="pacientLogin.html">Login</a>
+        <a href="agendamento.html">Agendar</a>
+        <a href="../homePaciente/findDoctors.php">Médicos Parceiros</a>
+    </nav>
+</header>
+
+<div class="hero">
+    <h1>Encontre a ajuda que você precisa, de forma rápida e confiável!</h1>
+    <input type="text" placeholder="Pesquise médicos, especialidades ou estabelecimentos de saúde">
+    <button>Pesquisar</button>
+    <div style="margin-top: 20px;">
+        <a href="../loginMedico/doctorLogin.html">Perfil Médico</a>
+        <a href="../loginPaciente/pacientLogin.html">Perfil Paciente</a>
+    </div>
+</div>
+
+<section class="testimonials" style="background-color: #f9f9f9; padding: 20px; margin-top: 20px;">
+    <h2 style="text-align: center; color: #007acc;">O que nossos usuários dizem?</h2>
+    <div style="text-align: center; margin-top: 10px;">
+        <blockquote style="font-style: italic; font-size: 16px;">
+            "A plataforma é super fácil de usar e me ajudou a encontrar o médico ideal em minutos!"
+        </blockquote>
+        <cite style="font-size: 14px; color: #555;">- Ana Paula, São Paulo</cite>
+    </div>
+</section>
+
+<section class="blog" style="padding: 20px; margin-top: 20px;">
+    <h2 style="text-align: center; color: #007acc;">Dicas e Artigos de Saúde</h2>
+    <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+        <div style="width: 250px; background-color: #e6f2ff; padding: 10px; border-radius: 8px; text-align: center;">
+            <h3 style="font-size: 16px; color: #003d66;">Como se preparar para sua consulta médica</h3>
+            <p style="font-size: 14px; color: #555;">Dicas rápidas para otimizar seu tempo na consulta.</p>
+        </div>
+        <div style="width: 250px; background-color: #e6f2ff; padding: 10px; border-radius: 8px; text-align: center;">
+            <h3 style="font-size: 16px; color: #003d66;">Alimentação saudável no dia a dia</h3>
+            <p style="font-size: 14px; color: #555;">Descubra como pequenos ajustes podem melhorar sua saúde.</p>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="footer-container">
+        <div class="footer-logo">
+            <img src="../assets/logo.png" alt="Doc Finder Logo">
+        </div>
+        <p>© 2024 Doc Finder. Todos os direitos reservados.</p>
+    </div>
+</footer>
+
+
 </body>
 </html>
